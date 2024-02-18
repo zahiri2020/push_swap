@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 03:04:28 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/06 05:30:28 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/18 15:54:45 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ t_list	*ft_lst_beforelast(t_list *lst)
 		return (NULL);
 	tmp = lst;
 	while (tmp->next->next)
-		tmp=tmp->next;
+		tmp = tmp->next;
 	return (tmp);
 }

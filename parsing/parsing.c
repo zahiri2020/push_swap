@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 01:46:35 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/15 19:12:18 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/18 15:58:02 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	check(char c, char c1, char c2, int i)
 {
 	if (ft_isdigit(c))
 		return (1);
-	else if (c  == ' ')
+	else if (c == ' ')
 		return (1);
 	else if (c == '-' && ft_isdigit(c1) && !ft_isdigit(c2) && i != 0)
 		return (1);
@@ -38,7 +38,6 @@ char	*parsing(char *str)
 	i = 0;
 	while (str[i])
 	{
-
 		if (check(str[i], str[i + 1], str[i - 1], i))
 		{
 			if (str[i] == '-')

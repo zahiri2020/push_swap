@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   rotate_a_b.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/04 06:39:14 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/14 10:21:55 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/17 16:54:57 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/18 16:02:33 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_push_b(t_list **src, t_list **dest)
+void	rot(t_list **lst)
 {
-	t_list	*new;
 	t_list	*tmp;
+	t_list	*last;
 
-	if (!*src)
+	tmp = *lst;
+	*lst = (*lst)->next;
+	if (!*lst || !(*lst)->next)
 		return ;
-	new = ft_lstnew((*src)->content, (*src)->index);
-	if (!new)
-		return ;
-	ft_lstadd_front(dest, new);
-	tmp = *src;
-	*src =(*src)->next;
-	ft_lstdelone (tmp);
+	last = ft_lstlast(*lst);
+	last->next = tmp;
+	tmp->next = NULL;
 }
 
+void	rr(t_list **a, t_list **b)
+{
+	rot (a);
+	rot(b);
+	write (1, "rr\n", 3);
+}

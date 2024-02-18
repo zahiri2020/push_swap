@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   rotate_b.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 05:27:00 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/18 15:51:31 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/17 10:20:57 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/18 15:59:45 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list	*ft_lstnew(int content, int index)
+void	rb(t_list **lst)
 {
-	t_list	*new_node;
+	t_list	*tmp;
+	t_list	*last;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node -> content = content;
-	new_node -> index = index;
-	new_node -> next = NULL;
-	return (new_node);
+	if (!*lst || !(*lst)->next)
+		return ;
+	tmp = *lst;
+	*lst = (*lst)->next;
+	last = ft_lstlast(*lst);
+	last->next = tmp;
+	tmp->next = NULL;
+	write (1, "rb\n", 3);
 }

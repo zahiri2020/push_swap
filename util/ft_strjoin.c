@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 02:29:30 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/05 02:17:21 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/18 15:50:18 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
 char	*ft_strdup(const char *s1)
 {
 	char	*s2;

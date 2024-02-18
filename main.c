@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 01:40:08 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/16 00:12:25 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/18 16:45:56 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_push(t_list **lst, int content)
 {
-	t_list *new = NULL;
+	t_list	*new;
 
 	new = ft_stack_new(content, lst);
 	if (!new)
@@ -22,19 +22,13 @@ void	ft_push(t_list **lst, int content)
 	ft_lstadd_back(lst, new);
 }
 
-void	f()
+char	**fill_strs(char **av, int ac)
 {
-	system("leaks push_swap");
-}
-
-char **fill_strs(char **av, int ac)
-
-{
-	char	*s;
-	char 	**strs;
+	char		*s;
+	char		**strs;
 	int			i;
 	int			j;
-	
+
 	i = 1;
 	j = 0;
 	if (ac < 2)
@@ -50,18 +44,16 @@ char **fill_strs(char **av, int ac)
 	}
 	strs = ft_split(s, ' ');
 	if (is_duplicate(strs))
-			ft_exit(s);
-	free(s);
+		ft_exit(s);
 	return (strs);
 }
 
-int main (int ac , char **av)
+int	main(int ac, char **av)
 {
-	// atexit(f);
-	char **strs;
-	int i;
-	t_list *stack_a;
-	t_list *stack_b;
+	char	**strs;
+	int		i;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
 	i = 0;
 	stack_a = NULL;
@@ -70,26 +62,39 @@ int main (int ac , char **av)
 	while (strs[i])
 		ft_push(&stack_a, ft_atoi(strs[i++]));
 	if (!is_sorted(stack_a))
-			exit (ft_lstclear(&stack_a)); 
-	// ft_lstclear(&stack_a);
+		exit(ft_lstclear(&stack_a));
+	if (ft_lstsize(stack_a) == 2)
+		ft_sorted_2(&stack_a);
+	else if (ft_lstsize(stack_a) == 3)
+		ft_sorted_3(&stack_a);
+	else if (ft_lstsize(stack_a) == 5)
+		ft_sorted_5(&stack_a, &stack_b);
+	else
+		ft_a_to_b(&stack_a, &stack_b);
+	i = 0;
+	while (strs[i])
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+	ft_lstclear(&stack_a);
+	ft_lstclear(&stack_b);
+}
 
-	sort_5(&stack_a, &stack_b);
-
+// 	exit(0);
+	// atexit(f);
 	// t_list *tmp = stack_a;
 	// while (tmp)
 	// {
 	// 	printf("|%d |->|%d|\n",tmp->content, tmp->index);
 	// 	tmp = tmp->next;
 	// }
-	// i = 0;
-	// while (strs[i])
-	// {
-	// 	free(strs[i]);
-	// 	i++;
-	// }
-	// free(strs);
-}
-
+	// exit(0);
+// void	f()
+// {
+// 	system("leaks push_swap");
+// }
 
 	// if (ft_lstsize(stack_a) == 3)
 	// 	ft_sorted_3 (&stack_a); 
@@ -98,7 +103,6 @@ int main (int ac , char **av)
 	// ft_push_b(&stack_b, &stack_a);
 	// ft_sorting(&stack_a, &stack_b);
 	// 	ft_exit(1)
-	 
 	// ft_exit(s);
 	// ft_sort_a(&stack_a, &stack_b);
 	// t_list *tmp1 = stack_b;
@@ -114,7 +118,6 @@ int main (int ac , char **av)
 	// tmp1 = stack_a;
 	// ft_rotate(&tmp);
 	// // tmp = stack_a;
-	
 	// printf("------------------\n");
 	// while (tmp1)
 	// {

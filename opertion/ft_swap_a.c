@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_swap_a.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 02:32:50 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/06 00:18:38 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/18 16:13:27 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_swap(t_list **lst)
+void	sa(t_list **lst)
 {
 	t_list	*tmp;
 	t_list	*head;
@@ -21,7 +21,8 @@ void	ft_swap(t_list **lst)
 		return ;
 	head = *lst;
 	tmp = *lst;
-	*lst=(*lst)->next;
-	tmp->next=(*lst)->next;
+	*lst = (*lst)->next;
+	tmp->next = (*lst)->next;
 	(*lst)->next = head;
+	write (1, "sa\n", 3);
 }

@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
+/*   push_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 03:40:34 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/06 10:55:43 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/17 09:48:21 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/18 16:09:49 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_reverse_rotate(t_list **lst)
+void	pb(t_list **src, t_list **dest)
 {
-	t_list	*head;
-	t_list	*last;
-	t_list	*before;
+	t_list	*new;
+	t_list	*tmp;
 
-	before = ft_lst_beforelast (*lst);
-	head = *lst;
-	last = ft_lstlast(*lst);
-	last->next = head;
-	*lst = last;
-	before->next = NULL;
-
+	if (!*src)
+		return ;
+	new = ft_lstnew((*src)->content, (*src)->index);
+	if (!new)
+		return ;
+	ft_lstadd_front(dest, new);
+	tmp = *src;
+	*src = (*src)->next;
+	write(1, "pb\n", 3);
 }
+	// free(tmp);÷

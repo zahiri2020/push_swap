@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sorted_2.c                                      :+:      :+:    :+:   */
+/*   sorted_3.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 11:00:10 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/06 11:08:17 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/06 07:54:44 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/18 16:23:43 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap.h" 
 
-void ft_sorted_2(t_list **lst)
+void	ft_sorted_3(t_list **lst)
 {
 	int	a;
 	int	b;
+	int	c;
 
 	a = (*lst)->content;
 	b = (*lst)->next->content;
-
-	if (a > b)
+	c = (*lst)->next->next->content;
+	if (a > b && b < c && a < c)
+		sa(lst);
+	else if (a < b && b > c && a < c)
 	{
-		ft_swap(lst);
-		write (1, "sa\n", 3);
+		rra (lst);
+		sa(lst);
 	}
-	else
-		write (1, "is_sorted\n", 10);
+	else if (a < b && b > c && a > c)
+		rra(lst);
+	else if (a > b && b < c && a > c)
+		ra(lst);
+	else if (a > b && b > c && a > c)
+	{
+		sa (lst);
+		rra(lst);
+	}
 }

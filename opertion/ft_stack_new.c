@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 21:42:10 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/07 12:04:16 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/18 16:19:33 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ void	insert_position(t_list *new_node, t_list **stack)
 
 t_list	*ft_stack_new(int content, t_list **stack)
 {
-	t_list	*new_node = NULL;
+	t_list	*new_node;
 
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (!new_node)
 		return (NULL);
-	new_node -> content = content;
-	new_node -> index = 0;
-	new_node -> next = NULL;
-	insert_position(new_node,stack);
+	new_node->content = content;
+	new_node->index = 0;
+	new_node->next = NULL;
+	insert_position(new_node, stack);
 	return (new_node);
 }

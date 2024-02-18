@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   push_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 05:27:00 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/18 15:51:31 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/04 06:39:14 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/18 16:11:06 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list	*ft_lstnew(int content, int index)
+void	pa(t_list **src, t_list **dest)
 {
-	t_list	*new_node;
+	t_list	*new;
+	t_list	*tmp;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node -> content = content;
-	new_node -> index = index;
-	new_node -> next = NULL;
-	return (new_node);
+	if (!*src)
+		return ;
+	new = ft_lstnew((*src)->content, (*src)->index);
+	if (!new)
+		return ;
+	ft_lstadd_front(dest, new);
+	tmp = *src;
+	*src = (*src)->next;
+	write(1, "pa\n", 3);
 }
+
+	// free(tmp);

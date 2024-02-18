@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotate.c                                        :+:      :+:    :+:   */
+/*   ft_swap_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/04 07:11:23 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/07 15:49:37 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/17 16:31:38 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/18 16:12:36 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_rotate(t_list **lst)
+void	sb(t_list **lst)
 {
+	t_list	*tmp;
+	t_list	*head;
+
+	head = *lst;
+	tmp = *lst;
 	if (!*lst || !(*lst)->next)
 		return ;
-	t_list	*tmp;
-	t_list	*last;
-
-	tmp = *lst;
-	*lst = (*lst)->next;
-	last = ft_lstlast(*lst);
-	last->next=tmp;
-	tmp->next = NULL;
+	*lst = *lst)->next;
+	tmp->next = (*lst)->next;
+	(*lst)->next = head;
+	write (1, "sb\n", 3);
 }
