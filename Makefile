@@ -6,14 +6,14 @@
 #    By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 02:41:00 by ezahiri           #+#    #+#              #
-#    Updated: 2024/02/17 23:46:15 by ezahiri          ###   ########.fr        #
+#    Updated: 2024/02/22 19:58:43 by ezahiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
  CC = cc #-g -fsanitize=address
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
-SRCS = main.c a_to_b.c sorted_2.c sorted_3.c sorted.c ft_sort_a.c is_sorted.c sorted_5.c \
+SRCS = main.c a_to_b.c sorted_2.c sorted_3.c sorted.c is_sorted.c sorted_5.c \
        parsing/parsing.c parsing/is_duplicate.c \
 		util/ft_atoi.c \
 		util/ft_isdigit.c \
