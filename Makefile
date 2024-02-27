@@ -6,7 +6,7 @@
 #    By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 02:41:00 by ezahiri           #+#    #+#              #
-#    Updated: 2024/02/27 17:05:13 by ezahiri          ###   ########.fr        #
+#    Updated: 2024/02/27 17:23:41 by ezahiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,7 @@ BONUS_SRCS = BONUS/main_bonus.c \
 			BONUS/checker_bonus.c \
 			BONUS/ft_strcmp.c \
 			BONUS/add_back_ins.c\
+			BONUS/clear_ins.c\
 			BONUS/get_next_line/get_next_line.c \
 			BONUS/get_next_line/get_next_line_utils.c \
 			BONUS/opertion/push_a_bonus.c \

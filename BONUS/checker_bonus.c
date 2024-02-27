@@ -6,28 +6,12 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 10:11:28 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 17:17:48 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 17:30:32 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-
-void	clear_ins(t_ins **lst)
-{
-	t_ins	*tmp;
-
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		tmp = (*lst)->next ;
-		free((*lst)->content);
-		free(*lst);
-		(*lst) = tmp;
-	}
-	*lst = NULL;
-}
 
 t_ins	*new_ins(void *content)
 {
@@ -87,18 +71,28 @@ void f()
 {
 	system("leaks checker");
 }
+void ft_help(t_ins *all, t_list **a, t_list **b)
+{
+	t_ins	*tmp;
 
+	tmp = NULL;
+	tmp = all;
+	while (tmp)
+	{
+		do_op(tmp->content, a, b);
+		tmp = tmp->next;
+	}
+	clear_ins(&all);
+}
 void	ft_checker(t_list **a, t_list **b)
 {
 	t_ins	*lst;
 	t_ins	*all;
-	t_ins	*tmp;
 	char	*s;
 
 	s = get_next_line(0);
 	lst = NULL;
 	all = NULL;
-	tmp = NULL;
 	while (s) 
 	{
 		if (!is_valid(s))
@@ -112,16 +106,5 @@ void	ft_checker(t_list **a, t_list **b)
 		ins_back(&all, lst);
 		s = get_next_line (0);
 	}
-	tmp = all;
-	while (tmp)
-	{
-		do_op(tmp->content, a, b);
-		tmp = tmp->next;
-	}
-	clear_ins(&all);
+	ft_help(all, a, b);
 }
-// 	if (!is_sorted(*a) && !*b)
-// 		write (1, "OK\n", 3);
-// 	else
-// 		write (1, "KO\n", 3);
-// }
