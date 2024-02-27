@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 01:40:08 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 17:58:46 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 18:43:01 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,12 @@ int	main(int ac, char **av)
 		ft_sorted_5(&stack_a, &stack_b);
 	else
 		ft_a_to_b(&stack_a, &stack_b);
+	// t_list *tmp = stack_a;
+	// while (tmp)
+	// {
+	// 	printf("|%d |->|%d|\n",tmp->content, tmp->index);
+	// 	tmp = tmp->next;
+	// }
 	memfree(strs);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
