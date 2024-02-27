@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_swap_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 04:23:26 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:08 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/17 16:31:38 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/26 18:36:08 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../push_swap.h"
 
-int	ft_lstclear(t_list **lst)
+void	sb(t_list **lst)
 {
 	t_list	*tmp;
+	t_list	*head;
 
-	if (!lst)
-		return (0);
-	while (*lst)
-	{
-		tmp = (*lst)->next ;
-		free (*lst);
-		*lst = tmp;
-	}
-	*lst = NULL;
-	return (0);
+	head = *lst;
+	tmp = *lst;
+	if (!*lst || !(*lst)->next)
+		return ;
+	*lst = (*lst)->next;
+	tmp->next = (*lst)->next;
+	(*lst)->next = head;
+	write (1, "sb\n", 3);
 }

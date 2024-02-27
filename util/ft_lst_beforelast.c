@@ -6,11 +6,11 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 03:04:28 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/18 15:54:45 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/26 16:23:54 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "ft_util.h"
 
 t_list	*ft_lst_beforelast(t_list *lst)
 {

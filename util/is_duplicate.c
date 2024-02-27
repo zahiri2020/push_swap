@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   is_duplicate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 04:23:26 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:08 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/04 20:02:36 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/26 16:42:04 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_util.h"
 
-int	ft_lstclear(t_list **lst)
+int	is_duplicate(char **strs)
 {
-	t_list	*tmp;
+	int		i;
+	int		j;
 
-	if (!lst)
-		return (0);
-	while (*lst)
+	i = 0;
+	while (strs[i])
 	{
-		tmp = (*lst)->next ;
-		free (*lst);
-		*lst = tmp;
+		j = i + 1;
+		if (ft_atoi(strs[i]) > 2147483647 || ft_atoi (strs[i]) < -2147483648)
+			return (1);
+		while (strs[j])
+		{
+			if (ft_atoi(strs[i]) == ft_atoi(strs[j]))
+				return (1);
+			j++;
+		}
+		i++;
 	}
-	*lst = NULL;
 	return (0);
 }

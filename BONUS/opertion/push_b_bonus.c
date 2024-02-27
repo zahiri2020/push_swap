@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   push_b_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 04:23:26 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:08 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/17 09:48:21 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/27 17:06:46 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../checker_bonus.h"
 
-int	ft_lstclear(t_list **lst)
+void	pb(t_list **src, t_list **dest)
 {
+	t_list	*new;
 	t_list	*tmp;
 
-	if (!lst)
-		return (0);
-	while (*lst)
-	{
-		tmp = (*lst)->next ;
-		free (*lst);
-		*lst = tmp;
-	}
-	*lst = NULL;
-	return (0);
+	if (!*src)
+		return ;
+	new = ft_lstnew((*src)->content, (*src)->index);
+	if (!new)
+		return ;
+	ft_lstadd_front(dest, new);
+	tmp = *src;
+	*src = (*src)->next;
 }

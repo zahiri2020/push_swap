@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   rev_rotate_a_b.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 04:23:26 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:08 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/17 16:50:15 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/26 18:37:40 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../push_swap.h"
 
-int	ft_lstclear(t_list **lst)
+void	rev_rot(t_list **lst)
 {
 	t_list	*tmp;
+	t_list	*last;
 
-	if (!lst)
-		return (0);
-	while (*lst)
-	{
-		tmp = (*lst)->next ;
-		free (*lst);
-		*lst = tmp;
-	}
-	*lst = NULL;
-	return (0);
+	tmp = *lst;
+	if (!*lst || !(*lst)->next)
+		return ;
+	*lst = (*lst)->next;
+	last = ft_lstlast(*lst);
+	last->next = tmp;
+	tmp->next = NULL;
+}
+
+void	rrr(t_list **a, t_list **b)
+{
+	rev_rot(a);
+	rev_rot(b);
+	write (1, "rrr\n", 4);
 }

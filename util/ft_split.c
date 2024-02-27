@@ -6,11 +6,11 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 04:03:32 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/05 02:17:13 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 14:36:42 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "ft_util.h"
 
 static int	count_words(const char *s, char c)
 {
@@ -25,8 +25,7 @@ static int	count_words(const char *s, char c)
 	}
 	return (cpt);
 }
-
-static void	*memfree(char **strs, int k)
+static void *strs_free(char **strs, int k)
 {
 	while (k--)
 		free(strs[k]);
@@ -34,7 +33,7 @@ static void	*memfree(char **strs, int k)
 	return (0);
 }
 
-static char	**splited(char **strs, const char *s, char c)
+static	char	**splited(char **strs, char *s, char c)
 {
 	int	i;
 	int	k;
@@ -51,7 +50,7 @@ static char	**splited(char **strs, const char *s, char c)
 				i++;
 			strs[k] = (char *)malloc(i + 1);
 			if (!strs[k])
-				return (memfree(strs, k));
+				return (strs_free(strs, k));
 			ft_strlcpy(strs[k], s, i + 1);
 			s += i;
 			k++;
@@ -61,7 +60,7 @@ static char	**splited(char **strs, const char *s, char c)
 	return (strs);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**strs;
 

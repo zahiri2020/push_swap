@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 04:23:26 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:08 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/26 16:19:50 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/26 16:21:40 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_util.h"
 
-int	ft_lstclear(t_list **lst)
+int	ft_strlen(char *str)
 {
-	t_list	*tmp;
+	int	len;
 
-	if (!lst)
-		return (0);
-	while (*lst)
-	{
-		tmp = (*lst)->next ;
-		free (*lst);
-		*lst = tmp;
-	}
-	*lst = NULL;
-	return (0);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }

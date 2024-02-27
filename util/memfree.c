@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   memfree.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 04:23:26 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:08 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/26 16:27:34 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/27 14:37:37 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_util.h"
 
-int	ft_lstclear(t_list **lst)
+void	memfree(char **strs)
 {
-	t_list	*tmp;
+	int	i;
 
-	if (!lst)
-		return (0);
-	while (*lst)
-	{
-		tmp = (*lst)->next ;
-		free (*lst);
-		*lst = tmp;
-	}
-	*lst = NULL;
-	return (0);
+	i = 0;
+	while (strs[i])
+		free(strs[i++]);
+	free(strs);
 }

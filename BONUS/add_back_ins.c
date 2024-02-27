@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   add_back_ins.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 04:23:26 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:08 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/27 16:50:02 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/27 16:54:51 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "checker_bonus.h"
 
-int	ft_lstclear(t_list **lst)
+t_ins *last_ins(t_ins *lst)
 {
-	t_list	*tmp;
+	t_ins *tmp;
 
-	if (!lst)
-		return (0);
-	while (*lst)
-	{
-		tmp = (*lst)->next ;
-		free (*lst);
-		*lst = tmp;
-	}
-	*lst = NULL;
-	return (0);
+	tmp =lst;
+
+	while (lst->next)
+		lst=lst->next;
+	return (lst);
+}
+
+void	ins_back(t_ins **lst, t_ins *new)
+{
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
+		last_ins(*lst)-> next = new;
 }

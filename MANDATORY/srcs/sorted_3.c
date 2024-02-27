@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   sorted_3.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 23:51:47 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:23:42 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/06 07:54:44 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/26 18:35:40 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../push_swap.h"
 
-long	ft_atoi(const char *str)
+void	ft_sorted_3(t_list **lst)
 {
-	long	r;
-	int		s;
+	int	a;
+	int	b;
+	int	c;
 
-	r = 0;
-	s = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+')
+	a = (*lst)->content;
+	b = (*lst)->next->content;
+	c = (*lst)->next->next->content;
+	if (a > b && b < c && a < c)
+		sa(lst);
+	else if (a < b && b > c && a < c)
 	{
-		s = 1 - 2 * (*str == '-');
-		str++;
+		rra (lst);
+		sa(lst);
 	}
-	while (*str && *str >= '0' && *str <= '9')
+	else if (a < b && b > c && a > c)
+		rra(lst);
+	else if (a > b && b < c && a > c)
+		ra(lst);
+	else if (a > b && b > c && a > c)
 	{
-		r = r * 10 + (*str - 48);
-		if ((r > 2147483647 && s == 1) || (r > 2147483648 && s == -1))
-			return (2147483648);
-		str++;
+		sa (lst);
+		rra(lst);
 	}
-	return (r * s);
 }

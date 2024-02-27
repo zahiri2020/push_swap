@@ -6,41 +6,11 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 02:29:30 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/18 15:50:18 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/26 16:22:47 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	char	*s2;
-	int		len;
-	int		i;
-
-	len = ft_strlen(s1);
-	s2 = (char *)malloc (sizeof(char) * (len + 1));
-	if (!s2)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	s2[i] = '\0';
-	return (s2);
-}
+#include "ft_util.h"
 
 char	*ft_strjoin(char *s1, char *s2)
 {

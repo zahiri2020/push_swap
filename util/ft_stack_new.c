@@ -1,26 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_stack_new.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 05:27:00 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:20 by ezahiri          ###   ########.fr       */
+/*   Created: 2023/11/07 21:42:10 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/26 16:41:48 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_util.h"
 
-t_list	*ft_lstnew(int content, int index)
+void	insert_position(t_list *new_node, t_list **stack)
+{
+	t_list	*tmp;
+
+	tmp = *stack;
+	while (tmp)
+	{
+		if (new_node->content > tmp->content)
+			new_node->index += 1;
+		else
+			tmp->index += 1;
+		tmp = tmp->next;
+	}
+}
+
+t_list	*ft_stack_new(int content, t_list **stack)
 {
 	t_list	*new_node;
 
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (!new_node)
 		return (NULL);
-	new_node -> content = content;
-	new_node -> index = index;
-	new_node -> next = NULL;
+	new_node->content = content;
+	new_node->index = 0;
+	new_node->next = NULL;
+	insert_position(new_node, stack);
 	return (new_node);
 }

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 04:23:26 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:08 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/26 16:17:36 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/26 16:23:37 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_util.h"
 
-int	ft_lstclear(t_list **lst)
+char	*ft_strdup(char *s1)
 {
-	t_list	*tmp;
+	char	*s2;
+	int		len;
+	int		i;
 
-	if (!lst)
-		return (0);
-	while (*lst)
+	len = ft_strlen(s1);
+	s2 = (char *)malloc (sizeof(char) * (len + 1));
+	if (!s2)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		tmp = (*lst)->next ;
-		free (*lst);
-		*lst = tmp;
+		s2[i] = s1[i];
+		i++;
 	}
-	*lst = NULL;
-	return (0);
+	s2[i] = '\0';
+	return (s2);
 }

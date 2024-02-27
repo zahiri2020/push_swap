@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   rotate_a_b.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 04:23:26 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:08 by ezahiri          ###   ########.fr       */
+/*   Created: 2024/02/17 16:54:57 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/02/26 18:36:41 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_util.h"
+#include "../push_swap.h"
 
-int	ft_lstclear(t_list **lst)
+void	rot(t_list **lst)
 {
 	t_list	*tmp;
 
-	if (!lst)
-		return (0);
-	while (*lst)
-	{
-		tmp = (*lst)->next ;
-		free (*lst);
-		*lst = tmp;
-	}
-	*lst = NULL;
-	return (0);
+	if (!*lst || !(*lst)->next)
+		return ;
+	tmp = *lst;
+	*lst = (*lst)->next;
+	ft_lstadd_back(lst , tmp);
+}
+
+void	rr(t_list **a, t_list **b)
+{
+	rot (a);
+	rot(b);
+	write (1, "rr\n", 3);
 }
