@@ -6,12 +6,12 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:48:14 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 14:35:35 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 18:25:57 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTILS_H
-# define FT_UTILS_H
+#ifndef FT_UTIL_H
+# define FT_UTIL_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -30,7 +30,7 @@ char	*parsing(char *str);
 void	ft_exit(char *s);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strdup(char *s1);
-char	**ft_split(char  *s, char c);
+char	**ft_split(char *s, char c);
 long	ft_atoi(const char *str);
 size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
 int		ft_strlen(char *s);

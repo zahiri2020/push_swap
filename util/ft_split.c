@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 04:03:32 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 14:36:42 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 17:51:24 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ static int	count_words(const char *s, char c)
 	}
 	return (cpt);
 }
-static void *strs_free(char **strs, int k)
+
+static	void	*strs_free(char **strs, int k)
 {
 	while (k--)
 		free(strs[k]);

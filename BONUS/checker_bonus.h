@@ -6,14 +6,14 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 10:23:39 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 17:22:52 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 18:12:55 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
 
-#include "../util/ft_util.h"
+# include "../util/ft_util.h"
 
 typedef struct s_ins
 {
@@ -24,10 +24,7 @@ typedef struct s_ins
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 2
 # endif
-
-
 //operations
-
 void	pa(t_list **src, t_list **dest);
 void	pb(t_list **src, t_list **dest);
 void	sa(t_list **lst);

@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 06:03:28 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 18:35:54 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 18:25:22 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ int	ft_best_move(t_list *b, int index)
 	return (0);
 }
 
-void	sorting(t_list **a, t_list **b)
+void	sorting(t_list	**a, t_list **b)
 {
 	int	max;
-	// t_list *tmp;
 
 	max = ft_lstlast(*a)->index;
 	while (*b)
@@ -68,15 +67,7 @@ void	sorting(t_list **a, t_list **b)
 			rb(b);
 		else
 			rrb(b);
-		// tmp = *a;
-		// while (tmp)
-		// {
-		// 	printf("|%d |->|%d|\n",tmp->content, tmp->index);
-		// 		tmp = tmp->next;
-		// }
-		// sleep(1);
 	}
 	while (is_sorted(*a))
-		rra(a);		
+		rra(a);
 }
-

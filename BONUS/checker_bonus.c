@@ -6,12 +6,11 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 10:11:28 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 17:30:32 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 18:11:43 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-
 
 t_ins	*new_ins(void *content)
 {
@@ -25,7 +24,7 @@ t_ins	*new_ins(void *content)
 	return (new_node);
 }
 
-void  do_op(char *s, t_list **a ,t_list **b)
+void	do_op(char *s, t_list **a, t_list **b)
 {
 	if (!ft_strcmp("pa\n", s))
 		pa (b, a);
@@ -36,7 +35,7 @@ void  do_op(char *s, t_list **a ,t_list **b)
 	else if (!ft_strcmp("rb\n", s))
 		rb(b);
 	else if (!ft_strcmp("rr\n", s))
-		rr(a , b);
+		rr(a, b);
 	else if (!ft_strcmp("sa\n", s))
 		sa(a);
 	else if (!ft_strcmp("sb\n", s))
@@ -48,9 +47,10 @@ void  do_op(char *s, t_list **a ,t_list **b)
 	else if (!ft_strcmp("rrb\n", s))
 		rrb(a);
 	else if (!ft_strcmp("rrr\n", s))
-		rrr(a ,b);
+		rrr(a, b);
 }
-int  is_valid(char *s)
+
+int	is_valid(char *s)
 {
 	if (!ft_strcmp("pa\n", s) || !ft_strcmp("pb\n", s))
 		return (1);
@@ -64,14 +64,11 @@ int  is_valid(char *s)
 		return (1);
 	else if (!ft_strcmp("ss\n", s))
 		return (1);
-	else 
+	else
 		return (0);
 }
-void f()
-{
-	system("leaks checker");
-}
-void ft_help(t_ins *all, t_list **a, t_list **b)
+
+void	ft_help(t_ins *all, t_list **a, t_list **b)
 {
 	t_ins	*tmp;
 
@@ -84,6 +81,7 @@ void ft_help(t_ins *all, t_list **a, t_list **b)
 	}
 	clear_ins(&all);
 }
+
 void	ft_checker(t_list **a, t_list **b)
 {
 	t_ins	*lst;
@@ -93,7 +91,7 @@ void	ft_checker(t_list **a, t_list **b)
 	s = get_next_line(0);
 	lst = NULL;
 	all = NULL;
-	while (s) 
+	while (s)
 	{
 		if (!is_valid(s))
 		{

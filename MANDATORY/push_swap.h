@@ -6,14 +6,14 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 10:23:39 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 18:37:15 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 18:04:04 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "../util/ft_util.h"
+# include "../util/ft_util.h"
 
 void	pa(t_list **src, t_list **dest);
 void	pb(t_list **src, t_list **dest);

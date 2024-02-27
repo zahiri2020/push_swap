@@ -6,7 +6,7 @@
 #    By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 02:41:00 by ezahiri           #+#    #+#              #
-#    Updated: 2024/02/27 17:23:41 by ezahiri          ###   ########.fr        #
+#    Updated: 2024/02/27 18:32:56 by ezahiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,7 @@ SRCS =	MANDATORY/srcs/main.c \
 		MANDATORY/opertion/rotate_a_b.c \
 		MANDATORY/opertion/rev_rotate_a.c \
 		MANDATORY/opertion/rev_rotate_b.c \
-		MANDATORY/opertion/rev_rotate_a_b.c \
-
+		MANDATORY/opertion/rev_rotate_a_b.c 
 
 UTILS = util/ft_atoi.c \
 		util/ft_isdigit.c \

@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 10:20:57 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 18:36:49 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 18:18:35 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	rb(t_list **lst)
 		return ;
 	tmp = *lst;
 	*lst = (*lst)->next;
-	ft_lstadd_back(lst , tmp);
+	ft_lstadd_back(lst, tmp);
 	write (1, "rb\n", 3);
 }

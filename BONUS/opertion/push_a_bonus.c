@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 06:39:14 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 19:27:13 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 18:01:55 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ void	pa(t_list **src, t_list **dest)
 	*src = (*src)->next;
 	free(tmp);
 }
-

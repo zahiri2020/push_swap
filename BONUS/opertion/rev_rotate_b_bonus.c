@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 03:40:34 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 17:07:03 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 18:16:08 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	rrb(t_list **lst)
 	last->next = head;
 	*lst = last;
 	before->next = NULL;
-
 }

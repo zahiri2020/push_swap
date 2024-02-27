@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:16:55 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 20:51:38 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/27 17:34:21 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ int	is_sorted(t_list *stack_a)
 			return (1);
 		tmp = tmp->next;
 	}
-	// printf ("----\n");
 	return (0);
 }
