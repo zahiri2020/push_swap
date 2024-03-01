@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 10:11:28 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 18:11:43 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/01 15:34:09 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	do_op(char *s, t_list **a, t_list **b)
 	else if (!ft_strcmp("rra\n", s))
 		rra(a);
 	else if (!ft_strcmp("rrb\n", s))
-		rrb(a);
+		rrb(b);
 	else if (!ft_strcmp("rrr\n", s))
 		rrr(a, b);
 }
