@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:31:38 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 17:06:36 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/01 12:46:02 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	sb(t_list **lst)
 	t_list	*tmp;
 	t_list	*head;
 
-	head = *lst;
-	tmp = *lst;
 	if (!*lst || !(*lst)->next)
 		return ;
+	head = *lst;
+	tmp = *lst;
 	*lst = (*lst)->next;
 	tmp->next = (*lst)->next;
 	(*lst)->next = head;

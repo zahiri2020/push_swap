@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 01:40:08 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 17:00:50 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/01 11:46:46 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	main(int ac, char **av)
 	// if (ft_lstsize(stack_a) == 3)
 	// 	ft_sorted_3 (&stack_a); 
 	// ft_push_b(&stack_a, &stack_b);
-	// printf("stack_b: %d de index %d\n", stack_b->content, stack_b->index);
+	// printf("stack_b: %d de i %d\n", stack_b->content, stack_b->i);
 	// ft_push_b(&stack_b, &stack_a);
 	// ft_sorting(&stack_a, &stack_b);
 	// 	ft_exit(1)
@@ -92,7 +92,7 @@ int	main(int ac, char **av)
 	// printf("-------------\n");
 	// while (tmp1)
 	// {
-	// 	printf("|%d |->|%d|\n",tmp1->content, tmp1->index);
+	// 	printf("|%d |->|%d|\n",tmp1->content, tmp1->i);
 	// 	tmp1 = tmp1->next;
 	// }
 	// }
@@ -104,7 +104,7 @@ int	main(int ac, char **av)
 	// printf("------------------\n");
 	// while (tmp1)
 	// {
-	// 	printf("|%d |->|%d|\n",tmp1->content, tmp1->index);
+	// 	printf("|%d |->|%d|\n",tmp1->content, tmp1->i);
 	// 	tmp1 = tmp1->next;
 	// }
 	// free(s);
@@ -113,6 +113,6 @@ int	main(int ac, char **av)
 	// ft_rotate(&tmp2);
 	// while (tmp2)
 	// {
-	// 	printf("|%d |->|%d|\n",tmp2->content, tmp2->index);
+	// 	printf("|%d |->|%d|\n",tmp2->content, tmp2->i);
 	// 	free(tmp2);
 	// 	tmp2 = tmp2->next;

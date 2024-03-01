@@ -6,7 +6,7 @@
 #    By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 02:41:00 by ezahiri           #+#    #+#              #
-#    Updated: 2024/02/27 18:32:56 by ezahiri          ###   ########.fr        #
+#    Updated: 2024/03/01 11:25:55 by ezahiri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME = push_swap
 NAME_BONUS = checker
 
 SRCS =	MANDATORY/srcs/main.c \
-		MANDATORY/srcs/a_to_b.c \
+		MANDATORY/srcs/big_sorted.c \
 		MANDATORY/srcs/sorted_2.c \
 		MANDATORY/srcs/sorted_3.c \
 		MANDATORY/srcs/sorted_5.c \
@@ -82,9 +82,9 @@ UTILS_OBJ = $(UTILS:.c=.o)
 		
 BONUS_OBJ = $(BONUS_SRCS:.c=.o)
 
-all: $(NAME)
+all: $(NAME) clean
 
-bonus: $(NAME_BONUS)
+bonus: $(NAME_BONUS) clean
 
 
 $(NAME_BONUS) : $(BONUS_OBJ) $(UTILS_OBJ)

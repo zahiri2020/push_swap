@@ -163,11 +163,11 @@ class PsGui:
             del self.pile_a[0]
         return self.pile_a, self.pile_b
 
-    def set_color(self, index):
-        col = '#%02x%02x%02x' % (int(255 * (index - 0.3) * (index > 0.3)),
-                                 int(255 * index
-                                     - ((510 * (index - 0.6)) * (index > 0.6))),
-                                 int((255 - 510 * index) * (index < 0.5)))
+    def set_color(self, i):
+        col = '#%02x%02x%02x' % (int(255 * (i - 0.3) * (i > 0.3)),
+                                 int(255 * i
+                                     - ((510 * (i - 0.6)) * (i > 0.6))),
+                                 int((255 - 510 * i) * (i < 0.5)))
         return col
 
     def draw_rectangles(self):

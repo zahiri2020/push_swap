@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 06:39:14 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 18:46:31 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/01 11:46:46 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	pa(t_list **src, t_list **dest)
 
 	if (!*src)
 		return ;
-	new = ft_lstnew((*src)->content, (*src)->index);
+	new = ft_lstnew((*src)->content, (*src)->i);
 	if (!new)
 		return ;
 	ft_lstadd_front(dest, new);

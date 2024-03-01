@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a_to_b.c                                           :+:      :+:    :+:   */
+/*   big_sorted.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 23:40:40 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 18:45:17 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/01 11:56:43 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,37 @@
 
 void	ft_a_to_b(t_list **a, t_list **b)
 {
-	int	chunk2;
-	int	chunk1;
-	int	last;
+	int	ch2;
+	int	ch1;
+	int	md;
 
-	last = 0;
-	chunk1 = 0;
-	chunk2 = 0;
+	md = 0;
+	ch1 = 0;
+	ch2 = 0;
 	while (ft_lstsize(*a) > 3)
 	{
-		last = chunk1;
-		chunk2 = ft_lstsize(*a) / 6 + chunk1;
-		chunk1 = ft_lstsize(*a) / 3 + chunk1;
-		while (ft_lstsize(*b) < chunk1)
+		md = ch1;
+		ch2 = ft_lstsize(*a) / 6 + ch1;
+		ch1 = ft_lstsize(*a) / 3 + ch1;
+		while (ft_lstsize(*b) < ch1)
 		{
-			if (*b && (*a)->index >= chunk1 && \
-			(*b)->index >= last && (*b)->index < chunk2)
-				rr(a, b);
-			if (*b && (*b)->index >= last && (*b)->index < chunk2)
-				rb(b);
-			if (*a && (*a)->index < chunk1)
+			if (*a && (*a)->i < ch1)
 				pb(a, b);
 			else
 				ra(a);
+			if (*b && (*a)->i >= ch1 && (*b)->i >= md && (*b)->i < ch2)
+				rr(a, b);
+			if (*b && (*b)->i >= md && (*b)->i < ch2)
+				rb(b);
 		}
 	}
+}
+
+void	big_sort(t_list **a, t_list **b)
+{
+	ft_a_to_b(a, b);
 	ft_sorted_3(a);
 	sorting(a, b);
+	while (is_sorted(*a))
+		rra(a);
 }

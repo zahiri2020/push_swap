@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:54:57 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 18:02:11 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/28 12:25:36 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	rot(t_list **lst)
 	tmp = *lst;
 	*lst = (*lst)->next;
 	ft_lstadd_back(lst, tmp);
+	tmp->next = NULL;
 }
 
 void	rr(t_list **a, t_list **b)

@@ -6,13 +6,13 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 06:03:28 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 18:25:22 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/01 12:01:28 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_best_move(t_list *b, int index)
+int	ft_best_move(t_list *b, int pos)
 {
 	int		i;
 	int		size;
@@ -23,7 +23,7 @@ int	ft_best_move(t_list *b, int index)
 	i = 0;
 	while (i <= size / 2)
 	{
-		if (index == tmp->index)
+		if (pos == tmp->i)
 			return (1);
 		i++;
 		tmp = tmp->next;
@@ -35,39 +35,24 @@ void	sorting(t_list	**a, t_list **b)
 {
 	int	max;
 
-	max = ft_lstlast(*a)->index;
+	max = ft_lstlast(*a)->i;
 	while (*b)
 	{
-		if ((*a)->index - 1 == (*b)->index)
+		if ((*a)->i - 1 == (*b)->i)
 			pa(b, a);
-		else if ((*a)->index - 1 == ft_lstlast(*b)->index)
-		{
-			rrb(b);
-			pa(b, a);
-		}
-		else if (ft_lstlast(*a)->index == max)
-		{
-			pa(b, a);
-			ra(a);
-		}
-		else if (ft_lstlast(*a)->index < (*b)->index)
-		{
-			pa(b, a);
-			ra(a);
-		}
-		else if (ft_lstlast(*a)->index < ft_lstlast(*b)->index)
-		{
-			rrb(b);
-			pa(b, a);
-			ra(a);
-		}
-		else if (ft_lstlast(*a)->index == (*a)->index - 1)
+		else if ((*a)->i - 1 == ft_lstlast(*b)->i)
+			(rrb(b), pa(b, a));
+		else if (ft_lstlast(*a)->i == max)
+			(pa(b, a), ra(a));
+		else if (ft_lstlast(*a)->i < (*b)->i)
+			(pa(b, a), ra(a));
+		else if (ft_lstlast(*a)->i < ft_lstlast(*b)->i)
+			(rrb(b), pa(b, a), ra(a));
+		else if (ft_lstlast(*a)->i == (*a)->i - 1)
 			rra(a);
-		else if (*b && ft_best_move(*b, (*a)->index - 1))
+		else if (*b && ft_best_move(*b, (*a)->i - 1))
 			rb(b);
 		else
 			rrb(b);
 	}
-	while (is_sorted(*a))
-		rra(a);
 }

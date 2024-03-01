@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 10:20:57 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/27 18:18:35 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/02/28 12:27:27 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ void	rb(t_list **lst)
 	tmp = *lst;
 	*lst = (*lst)->next;
 	ft_lstadd_back(lst, tmp);
+	tmp->next = NULL;
 	write (1, "rb\n", 3);
 }
