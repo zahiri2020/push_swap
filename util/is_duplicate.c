@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 20:02:36 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 16:42:04 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/03 20:50:47 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,19 @@ int	is_duplicate(char **strs)
 {
 	int		i;
 	int		j;
+	int		a;
 
+	a = 0;
 	i = 0;
 	while (strs[i])
 	{
+		a = ft_atoi(strs[i]);
 		j = i + 1;
-		if (ft_atoi(strs[i]) > 2147483647 || ft_atoi (strs[i]) < -2147483648)
+		if (a > 2147483647 || a < -2147483648)
 			return (1);
 		while (strs[j])
 		{
-			if (ft_atoi(strs[i]) == ft_atoi(strs[j]))
+			if (a == ft_atoi(strs[j]))
 				return (1);
 			j++;
 		}
