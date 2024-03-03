@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:48:14 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/01 11:46:46 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/03 20:31:42 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int		is_duplicate(char **strs);
 void	ft_push(t_list **lst, int content);
 t_list	*ft_stack_new(int content, t_list **stack);
 int		is_sorted(t_list *stack_a);
-void	memfree(char **strs);
+void	*memfree(char **strs);
 
 #endif
