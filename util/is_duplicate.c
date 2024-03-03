@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 20:02:36 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/03 20:50:47 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/03 21:22:57 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	is_duplicate(char **strs)
 {
 	int		i;
 	int		j;
-	int		a;
+	long	a;
 
 	a = 0;
 	i = 0;
