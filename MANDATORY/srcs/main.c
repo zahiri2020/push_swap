@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 01:40:08 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/03 20:32:55 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/03 23:22:07 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char	**fill_strs(char **av, int ac)
 
 	i = 1;
 	j = 0;
+	s = NULL;
 	if (ac < 2)
 		exit(0);
 	while (i < ac)
@@ -62,6 +63,7 @@ int	main(int ac, char **av)
 	strs = fill_strs(av, ac);
 	while (strs[i])
 		ft_push(&stack_a, ft_atoi(strs[i++]));
+	memfree(strs);
 	if (!is_sorted(stack_a))
 		exit(ft_lstclear(&stack_a));
 	if (ft_lstsize(stack_a) == 2)
@@ -72,7 +74,6 @@ int	main(int ac, char **av)
 		ft_sorted_5(&stack_a, &stack_b);
 	else
 		big_sort(&stack_a, &stack_b);
-	memfree(strs);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
 }
