@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 01:40:08 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/01 11:46:46 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/03 18:06:33 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	**fill_strs(char **av, int ac)
 	i = 1;
 	j = 0;
 	if (ac < 2)
-		exit(1);
+		exit(0);
 	while (i < ac)
 	{
 		while (av[i][j] == 32)

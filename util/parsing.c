@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 01:46:35 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/02/26 18:39:57 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/03/03 18:08:15 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,7 @@ char	*parsing(char *str)
 	{
 		if (check(str[i], str[i + 1], str[i - 1], i))
 		{
-			if (str[i] == '-')
-				i++;
-			if (str[i] == '+')
+			if (str[i] == '-' || str[i] == '+')
 				i++;
 			while (ft_isdigit(str[i]))
 				i++;
